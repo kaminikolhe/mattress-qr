@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
+  <script>
+    // List of URLs to open sequentially
+    const urls = [
+      'https://themattressstore.com/pages/designer-partnership-program#gVIhT2YOeO',
+      'https://themattressstore.com/pages/interior-design-services',
+      'https://themattressstore.com/pages/contact-us'
+    ];
+
+    // Delay between each URL in milliseconds
+    const delay = 2000;
+
+    // Open URLs sequentially
+    window.onload = function() {
+      urls.forEach((url, index) => {
+        setTimeout(() => {
+          // Attempt to open in new tab
+          window.open(url, '_blank');
+        }, index * delay);
+      });
+    }
+  </script>
+</head>
+<body>
+  <p>If the automatic redirect does not work, <a href="https://themattressstore.com/pages/designer-partnership-program#gVIhT2YOeO" target="_blank">click here</a>.</p>
+</body>
+</html>
