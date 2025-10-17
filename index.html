@@ -3,30 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirecting...</title>
-  <script>
-    // List of URLs to open sequentially
-    const urls = [
-      'https://themattressstore.com/pages/designer-partnership-program#gVIhT2YOeO',
-      'https://themattressstore.com/pages/interior-design-services',
-      'https://themattressstore.com/pages/contact-us'
-    ];
-
-    // Delay between each URL in milliseconds
-    const delay = 2000;
-
-    // Open URLs sequentially
-    window.onload = function() {
-      urls.forEach((url, index) => {
-        setTimeout(() => {
-          // Attempt to open in new tab
-          window.open(url, '_blank');
-        }, index * delay);
-      });
-    }
-  </script>
+  <title>The Mattress Store – Designer Program</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+    button { padding: 10px 20px; margin: 20px; font-size: 16px; cursor: pointer; }
+    iframe { width: 100%; height: 600px; border: 1px solid #ccc; margin-top: 20px; }
+  </style>
 </head>
 <body>
-  <p>If the automatic redirect does not work, <a href="https://themattressstore.com/pages/designer-partnership-program#gVIhT2YOeO" target="_blank">click here</a>.</p>
+  <h1>Welcome to The Mattress Store Designer Program</h1>
+  <p>Please complete each page below. Click “Next” to continue.</p>
+
+  <iframe id="pageFrame" src="https://themattressstore.com/pages/designer-partnership-program#gVIhT2YOeO"></iframe>
+
+  <div>
+    <button id="nextBtn">Next</button>
+  </div>
+
+  <script>
+    const urls = [
+      "https://themattressstore.com/pages/designer-partnership-program#gVIhT2YOeO",
+      "https://themattressstore.com/pages/interior-design-services",
+      "https://themattressstore.com/pages/contact-us"
+    ];
+
+    let currentIndex = 0;
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      currentIndex++;
+      if (currentIndex < urls.length) {
+        document.getElementById('pageFrame').src = urls[currentIndex];
+      } else {
+        alert("You have completed all pages. Thank you!");
+      }
+    });
+  </script>
 </body>
 </html>
