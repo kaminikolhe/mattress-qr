@@ -3,22 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Mattress Store – Designer Program</title>
+  <title>The Mattress Store Designer Program</title>
   <style>
     body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
     button { padding: 10px 20px; margin: 20px; font-size: 16px; cursor: pointer; }
-    iframe { width: 100%; height: 600px; border: 1px solid #ccc; margin-top: 20px; }
   </style>
 </head>
 <body>
   <h1>Welcome to The Mattress Store Designer Program</h1>
-  <p>Please complete each page below. Click “Next” to continue.</p>
+  <p>Click the button below to open each page:</p>
 
-  <iframe id="pageFrame" src="https://themattressstore.com/pages/designer-partnership-program#gVIhT2YOeO"></iframe>
-
-  <div>
-    <button id="nextBtn">Next</button>
-  </div>
+  <button id="nextBtn">Open Designer Program</button>
 
   <script>
     const urls = [
@@ -30,11 +25,11 @@
     let currentIndex = 0;
 
     document.getElementById('nextBtn').addEventListener('click', () => {
-      currentIndex++;
       if (currentIndex < urls.length) {
-        document.getElementById('pageFrame').src = urls[currentIndex];
+        window.open(urls[currentIndex], '_blank');
+        currentIndex++;
       } else {
-        alert("You have completed all pages. Thank you!");
+        alert("You have opened all pages. Thank you!");
       }
     });
   </script>
